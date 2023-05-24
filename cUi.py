@@ -1,6 +1,8 @@
 import tkinter as tk
 import time, keyboard, random
 
+bg_shown_opacity = 0.7
+
 class cUi:
     def c():
         mShown = bool(True)
@@ -17,7 +19,7 @@ class cUi:
         canvas.pack()
 
         # Number of lines and their length
-        num_lines = 100
+        num_lines = 105
         line_length = 150
         line_width = 1
 
@@ -31,13 +33,13 @@ class cUi:
                 mShown = not mShown
                 if mShown == bool(True):
                     eValue = 0.1
-                    while eValue < 0.7:
+                    while eValue < bg_shown_opacity:
                         time.sleep(0.02)
                         bgW.attributes('-alpha', eValue)
                         eValue += 0.1
                         bgW.update()
                 elif mShown == bool(False):
-                    eValue = 0.7
+                    eValue = bg_shown_opacity
                     while eValue > 0.0:
                         time.sleep(0.02)
                         bgW.attributes('-alpha', eValue)
